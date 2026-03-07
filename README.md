@@ -63,8 +63,7 @@ sent_at
 sent_date
 channel
 message
-created_at
-updated_at
+
 ```
 
 A unique constraint prevents sending more than one reminder per user per day.
@@ -76,7 +75,7 @@ A unique constraint prevents sending more than one reminder per user per day.
 ## 1. Clone the Repository
 
 ```
-git clone https://github.com/your-username/inactive-user-reminder.git
+https://github.com/mdmamunurrashidhridoy/inactive-user-reminder.git
 cd inactive-user-reminder
 ```
 
@@ -121,6 +120,7 @@ Set inactivity configuration:
 
 ```
 INACTIVE_USER_DAYS=7
+INACTIVE_USER_REMINDER_CHANNEL=log
 ```
 
 ---
@@ -136,7 +136,7 @@ php artisan key:generate
 ## 6. Run Migrations
 
 ```
-php artisan migrate
+php artisan migrate:fresh --seed
 ```
 
 ---
@@ -170,11 +170,6 @@ Run locally:
 php artisan schedule:work
 ```
 
-For production, add this cron job:
-
-```
-* * * * * php /path-to-project/artisan schedule:run >> /dev/null 2>&1
-```
 
 ---
 
@@ -217,7 +212,7 @@ storage/logs/laravel.log
 Example log entry:
 
 ```
-Reminder sent to inactive user: John Doe <john@example.com>
+Reminder sent to inactive user: inactiveUser <inactiveuser@example.com>
 ```
 
 ---
