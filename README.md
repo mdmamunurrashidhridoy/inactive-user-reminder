@@ -72,6 +72,15 @@ A unique constraint prevents sending more than one reminder per user per day.
 
 # Setup Instructions
 
+Local Development (XAMPP)
+
+If you are using XAMPP, place the project inside the htdocs directory.
+
+Example:
+```
+C:\xampp\htdocs\inactive-user-reminder
+```
+
 ## 1. Clone the Repository
 
 ```
